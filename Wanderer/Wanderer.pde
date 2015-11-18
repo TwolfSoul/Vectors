@@ -1,4 +1,4 @@
-int woof = 30;
+int woof = 10;
 float[] diam = new float[woof];
 PVector[] loc = new PVector[woof];
 PVector[] vel = new PVector[woof];
@@ -9,7 +9,8 @@ for(int i = 0;i < woof; i++)
   {
     diam[i] = 80;
     loc[i] = new PVector (random(width),random(height));
-    vel[i] = new PVector (random(-8,8),random(-8,8));
+    vel[i] = PVector.random2D();
+    vel[i].mult(5);
   }
 }
 
@@ -18,7 +19,10 @@ void draw() {
  for(int i = 0;i < woof; i++)
 {
   noStroke();
+  fill(random(255),random(255),random(255));
   ellipse(loc[i].x, loc[i].y, diam[i], diam[i]);
+  vel[i] = PVector.random2D();
+  vel[i].mult(5);
   
   loc[i].add(vel[i]);
 
