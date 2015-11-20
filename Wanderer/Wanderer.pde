@@ -1,4 +1,4 @@
-int woof = 1;
+int woof = 10;
 float[] diam = new float[woof];
 PVector[] loc = new PVector[woof];
 PVector[] vel = new PVector[woof];
@@ -9,7 +9,7 @@ void setup() {
   background(0);
 for(int i = 0;i < woof; i++)
   {
-    diam[i] = 80;
+    diam[i] = 50;
     loc[i] = new PVector (random(width),random(height));
     vel[i] = PVector.random2D();
     vel[i].mult(0);
